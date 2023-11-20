@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isNaN(itemNumber)) {
                 var nextItemNumber;
 
-                if (direction === 'right' && itemNumber === 1) {
+                if (direction === 'left' && itemNumber === 1) {
                     // Swipe right at item 1, redirect to root
                     var rootUrl = '/';
                     console.log("Redirecting to root:", rootUrl);
@@ -44,10 +44,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     return;
                 }
 
-                if (direction === 'right' && itemNumber > 1) {
+                if (direction === 'left' && itemNumber > 1) {
                     // Swipe right (go to the previous date)
                     nextItemNumber = itemNumber - 1;
-                } else if (direction === 'left') {
+                } else if (direction === 'right') {
                     // Swipe left (go to the next date)
                     nextItemNumber = itemNumber + 1;
                 }
