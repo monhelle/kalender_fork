@@ -33,9 +33,12 @@ body {
 
 #grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(6, 1fr); /* 6 columns */
+    grid-template-rows: repeat(4, 1fr); /* 4 rows */
     gap: 10px;
     padding: 20px;
+    margin: 0 auto; /* Center the grid */
+    max-width: 800px; /* Adjust the max-width as needed */
 }
 
 .grid-item {
@@ -68,6 +71,7 @@ body {
 @media only screen and (max-width: 600px) {
     #grid-container {
         grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(8, 1fr); /* Adjust rows for smaller screens */
         padding: 10px; /* Adjust padding for smaller screens */
     }
 }
@@ -79,6 +83,8 @@ footer {
     padding: 10px;
     text-align: center;
     width: 100%;
+    position: sticky;
+    bottom: 0;
 }
 
 header {
