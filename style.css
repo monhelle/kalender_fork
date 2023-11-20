@@ -1,0 +1,72 @@
+:root {
+    --main-bg-color: #f5f5f5; /* Light gray background */
+    --header-footer-bg: #333; /* Dark background for header and footer */
+    --header-footer-text: #fff; /* White text color for header and footer */
+    --grid-border: #ddd; /* Border color for grid items */
+    --openable-bg: #4caf50; /* Green background for openable items */
+    --openable-text: #fff; /* White text color for openable items */
+    --unopenable-bg: #ccc; /* Gray background for unopenable items */
+    --unopenable-text: #555; /* Darker text color for unopenable items */
+    --hover-bg: #e0e0e0; /* Light gray background on hover */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--main-bg-color);
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.sticky-header header, .sticky-header footer {
+    background-color: var(--header-footer-bg);
+    color: var(--header-footer-text);
+    padding: 10px;
+    text-align: center;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 20px;
+}
+
+.grid-item {
+    border: 1px solid var(--grid-border);
+    padding: 20px;
+    text-align: center;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.openable {
+    background-color: var(--openable-bg);
+    color: var(--openable-text);
+}
+
+.unopenable {
+    background-color: var(--unopenable-bg);
+    color: var(--unopenable-text);
+    cursor: not-allowed;
+}
+
+.grid-item:hover {
+    background-color: var(--hover-bg);
+}
+
+@media only screen and (max-width: 600px) {
+    #grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
