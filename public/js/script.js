@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     var gridContainer = document.getElementById('grid-container');
-    
+
     // Get the current date
     var currentDate = new Date();
-    
+
     // Get the current day in December
     var currentDayInDecember = currentDate.getDate();
 
@@ -16,8 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (i <= currentDayInDecember) {
             gridItem.classList.add('openable');
             gridItem.addEventListener('click', function() {
-                alert('Opened item ' + this.textContent);
                 // Add your custom logic for handling opened items
+                var itemNumber = this.textContent;
+                window.location.href = './december/' + itemNumber + '/content.html'// Redirect to a new page with the item number as a parameter
             });
         } else {
             gridItem.classList.add('unopenable');
