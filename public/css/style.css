@@ -67,6 +67,27 @@ body {
 
 @media only screen and (max-width: 600px) {
     #grid-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        padding: 10px; /* Adjust padding for smaller screens */
     }
 }
+
+/* Centered and styled footer */
+footer {
+    background-color: var(--header-footer-bg);
+    color: var(--header-footer-text);
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+header {
+    background-color: var(--header-footer-bg);
+    color: var(--header-footer-text);
+    padding: 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+
