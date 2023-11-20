@@ -13,6 +13,11 @@ app.get('/', function (req, res) {
     res.render('index');
 });
 
+app.get('/december/:date', function(req, res) {
+    const date = req.params.date
+    res.render('/december/' + date + '/content.html')
+})
+
 
 
 /*
