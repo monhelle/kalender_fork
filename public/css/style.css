@@ -16,7 +16,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: var(--main-bg-color);
-    overflow: hidden;
+    
 }
 
 #date-display {
@@ -43,6 +43,7 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 10px;
     padding: 20px;
+    margin-bottom: 200px;
 }
 
 .grid-item {
@@ -95,6 +96,7 @@ body {
         padding: 10px; /* Adjust padding for smaller screens */
     }
 }
+
 
 /* Centered and styled footer */
 footer {
