@@ -48,6 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
             gridItem.addEventListener('click', function() {
                 // Add your custom logic for handling opened items
                 var itemNumber = this.textContent;
+                let currentPageIndex = localStorage.getItem('currentPageIndex');
+                currentPageIndex = itemNumber
                 window.location.href = '/december/' + itemNumber + '/'// Redirect to a new page with the item number as a parameter
             });
         } else {
