@@ -170,12 +170,10 @@ body {
 footer {
     position: fixed;
     bottom: 0;
-    width: 100%;
     background-color: var(--header-footer-bg);
     color: var(--header-footer-text);
     padding: 10px;
     text-align: center;
-    width: 100%;
     position: sticky;
     bottom: 0;
     z-index: 5;
@@ -187,7 +185,6 @@ header {
     color: var(--header-footer-text);
     padding: 10px;
     text-align: center;
-    width: 100%;
     position: sticky;
     bottom: 0;
     z-index: 5;
