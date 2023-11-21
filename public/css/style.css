@@ -7,8 +7,11 @@
     --openable-text: #fff; /* White text color for openable items */
     --unopenable-bg: #ccc; /* Gray background for unopenable items */
     --unopenable-text: #555; /* Darker text color for unopenable items */
+    --lid-bg: #385B3F; /* Darker color for the lid */
+    --ribbon-bg: #2e3192; /* Ribbon color */
     --hover-bg: #e0e0e0; /* Light gray background on hover */
 }
+
 
 body {
     font-family: Arial, sans-serif;
@@ -55,52 +58,53 @@ body {
     position: relative; /* Added for positioning */
 }
 
-.grid-item {
-    border: 1px solid var(--grid-border);
-    padding: 20px;
-    text-align: center;
-    aspect-ratio: 1/1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    position: relative; /* Added for positioning */
-}
-
-.grid-item::after {
-    content: ''; /* Pseudo-element for the first crossed ribbon */
+.bow {
     position: absolute;
-    top: 10%;
-    left: 50%;
     width: 20px;
-    height: 50px;
-    background-color: #2e3192; /* Ribbon color */
-    transform: translateX(-50%) rotate(-45deg); /* Rotate the ribbon to create a cross */
-}
-
-.grid-item::before {
-    content: ''; /* Pseudo-element for the second crossed ribbon */
-    position: absolute;
-    top: 10%;
+    height: 20px;
+    background-color: var(--unopenable-bg); /* Unopenable color for the bow */
+    border-radius: 50%;
+    top: -20px;
     left: 50%;
-    width: 20px;
-    height: 50px;
-    background-color: #2e3192; /* Ribbon color */
-    transform: translateX(-50%) rotate(45deg); /* Rotate the ribbon to create a cross */
-}
-
-/* Small ribbon up the middle */
-.grid-item::before::after {
-    content: ''; /* Pseudo-element for the small ribbon */
-    position: absolute;
-    top: 0%;
-    left: 50%;
-    width: 10px;
-    height: 175px;
-    background-color: #2e3192; /* Ribbon color */
     transform: translateX(-50%);
+    z-index: 1; /* Ensure the bow is above the lid and ribbon */
 }
+
+.bow::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fff; /* Inner bow color */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure the inner bow is above the outer bow */
+}
+
+
+.lid {
+    position: absolute;
+    width: 110%;
+    height: 10%;
+    background-color: var(--unopenable-bg); /* Unopenable color for the lid */
+    top: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0; /* Ensure the lid is behind the bow and ribbon */
+}
+
+.ribbon {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background-color: var(--unopenable-bg); /* Unopenable color for the ribbon */
+    top: 60;
+    rotate: 90deg;
+}
+
+
 
 
 .openable {
@@ -137,3 +141,26 @@ footer {
     bottom: 0;
     z-index: 5;
 }
+
+
+.openable-rib {
+    background-color: var(--ribbon-bg);
+}
+
+.unopenable-rib {
+    background-color: var(--unopenable-bg);
+    color: var(--unopenable-text);
+    cursor: not-allowed;
+}
+
+.openable-lid {
+    background-color: var(--lid-bg);
+}
+
+.unopenable-lid {
+    background-color: var(--unopenable-bg);
+    color: var(--unopenable-text);
+    cursor: not-allowed;
+}
+
+
