@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             gridItem.addEventListener('click', function() {
                 // Add your custom logic for handling opened items
                 var itemNumber = this.textContent;
-                window.location.href = './december/' + itemNumber + '/content.html'// Redirect to a new page with the item number as a parameter
+                window.location.href = '/december/' + itemNumber + '/'// Redirect to a new page with the item number as a parameter
             });
         } else {
             gridItem.classList.add('unopenable');
