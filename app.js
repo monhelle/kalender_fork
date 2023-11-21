@@ -17,9 +17,6 @@ app.get('/december/:date', function(req, res) {
     res.sendFile(`public/december/${date}/content.html` , { root : __dirname});
 })
 
-/*
 app.use((req, res) => {
     res.status(404).render('404', { title: '404' });
   });
-
-*/
