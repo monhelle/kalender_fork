@@ -16,6 +16,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: var(--main-bg-color);
+    overflow: hidden;
 }
 
 #date-display {
@@ -97,11 +98,15 @@ body {
 
 /* Centered and styled footer */
 footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     background-color: var(--header-footer-bg);
     color: var(--header-footer-text);
     padding: 10px;
     text-align: center;
 }
+
 
 header {
     background-color: var(--header-footer-bg);
