@@ -18,6 +18,12 @@ body {
     background-color: var(--main-bg-color);
 }
 
+#date-display {
+    text-align: center;
+    color: white;
+    padding: 5px;
+}
+
 .sticky-header {
     position: sticky;
     top: 0;
@@ -53,6 +59,23 @@ body {
 .openable {
     background-color: var(--openable-bg);
     color: var(--openable-text);
+}
+
+#pad-bar {
+    padding: 5px;
+    background-color: #333;
+}
+
+#progress-bar {
+    z-index: 10;
+    background-color: #4caf50;
+    height: 20px;
+}
+
+#progress-display {
+    color: white;
+    text-align: center;
+    padding: 5px;
 }
 
 .unopenable {
