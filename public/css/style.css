@@ -39,6 +39,7 @@ body {
     padding: 20px;
     margin: 0 auto; /* Center the grid */
     max-width: 800px; /* Adjust the max-width as needed */
+    margin-top: 10px; /* Adjust the top margin to reduce space under the footer */
 }
 
 .grid-item {
@@ -51,7 +52,56 @@ body {
     align-items: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    position: relative; /* Added for positioning */
 }
+
+.grid-item {
+    border: 1px solid var(--grid-border);
+    padding: 20px;
+    text-align: center;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative; /* Added for positioning */
+}
+
+.grid-item::after {
+    content: ''; /* Pseudo-element for the first crossed ribbon */
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 20px;
+    height: 50px;
+    background-color: #2e3192; /* Ribbon color */
+    transform: translateX(-50%) rotate(-45deg); /* Rotate the ribbon to create a cross */
+}
+
+.grid-item::before {
+    content: ''; /* Pseudo-element for the second crossed ribbon */
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 20px;
+    height: 50px;
+    background-color: #2e3192; /* Ribbon color */
+    transform: translateX(-50%) rotate(45deg); /* Rotate the ribbon to create a cross */
+}
+
+/* Small ribbon up the middle */
+.grid-item::before::after {
+    content: ''; /* Pseudo-element for the small ribbon */
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 10px;
+    height: 175px;
+    background-color: #2e3192; /* Ribbon color */
+    transform: translateX(-50%);
+}
+
 
 .openable {
     background-color: var(--openable-bg);
@@ -85,13 +135,5 @@ footer {
     width: 100%;
     position: sticky;
     bottom: 0;
-}
-
-header {
-    background-color: var(--header-footer-bg);
-    color: var(--header-footer-text);
-    padding: 10px;
-    text-align: center;
-    position: sticky;
-    top: 0;
+    z-index: 5;
 }
