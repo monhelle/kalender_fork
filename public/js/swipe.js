@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Check if nextItemNumber is beyond the current date
                 if (nextItemNumber <= currentDayInDecember) {
                     // Construct the URL for the next item
-                    var nextItemUrl = '/' + nextItemNumber + '/content.html';
+                    var nextItemUrl = '/' + nextItemNumber + '/';
                     console.log('Next item URL:', nextItemUrl);
 
                     // Remove the current item number from the URL
