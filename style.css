@@ -18,13 +18,6 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: var(--main-bg-color);
-    
-}
-
-#date-display {
-    text-align: center;
-    color: white;
-    padding: 5px;
 }
 
 .sticky-header {
@@ -126,23 +119,6 @@ body {
     font-size: 30px;
 }
 
-#pad-bar {
-    padding: 5px;
-    background-color: #333;
-}
-
-#progress-bar {
-    z-index: 10;
-    background-color: #4caf50;
-    height: 20px;
-}
-
-#progress-display {
-    color: white;
-    text-align: center;
-    padding: 5px;
-}
-
 .unopenable {
     background-color: var(--unopenable-bg);
     color: var(--unopenable-text);
@@ -165,20 +141,17 @@ body {
     }
 }
 
-
 /* Centered and styled footer */
 footer {
     position: fixed;
     bottom: 0;
+    width: 100%;
     background-color: var(--header-footer-bg);
     color: var(--header-footer-text);
     padding: 10px;
     text-align: center;
-    position: sticky;
-    bottom: 0;
-    z-index: 5;
+    z-index: 6;
 }
-
 
 header {
     background-color: var(--header-footer-bg);
@@ -186,8 +159,8 @@ header {
     padding: 10px;
     text-align: center;
     position: sticky;
-    bottom: 0;
-    z-index: 5;
+    top: 0;
+    z-index: 6;
 }
 
 
