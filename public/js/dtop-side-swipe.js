@@ -55,6 +55,9 @@ document.addEventListener('DOMContentLoaded', function() {
                    var finalUrl = pathParts.join('/');
                    console.log('Final URL:', finalUrl);
 
+                   localStorage.setItem('box' + itemNumber, 'opened');
+                   localStorage.setItem('box' + nextItemNumber, 'opened');
+
                    // Directly update the pathname
                    window.location.pathname = finalUrl;
                } else {

@@ -54,10 +54,11 @@ if(currentUrl[2] == 1){
     left.addEventListener("click", () => {
         let date = Number(currentUrl[2])
         window.location = `/december/${date - 1}`
+        localStorage.setItem('box' + `${date - 1}`, 'opened');
     })
     right.addEventListener("click", () => {
         let date = Number(currentUrl[2]) 
         window.location = `/december/${date + 1}`
+        localStorage.setItem('box' + `${date + 1}`, 'opened');
     })
 }
-
