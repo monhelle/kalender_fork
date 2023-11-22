@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var gridContainer = document.getElementById('grid-container');
 
     // Get the current date
@@ -50,11 +50,24 @@ document.addEventListener('DOMContentLoaded', function() {
             bow.classList.add('openable-rib' + randomPaletteNumber);
             lid.classList.add('openable-lid' + randomPaletteNumber);
 
-            gridItem.addEventListener('click', function() {
+            // Check if the item was previously opened
+            var isOpened = localStorage.getItem('box' + i);
+
+            if (isOpened) {
+                gridItem.style.opacity = 0.5; // Set the opacity if the box was opened
+            }
+
+            gridItem.addEventListener('click', function () {
                 // Add your custom logic for handling opened items
                 var itemNumber = this.querySelector('.grid-item-text').textContent;
                 localStorage.setItem('currentPageIndex', itemNumber);
                 window.location.href = '/december/' + itemNumber + '/'; // Redirect to a new page with the item number as a parameter
+
+                // Toggle the opacity and store the state in local storage
+                {
+                    this.style.opacity = 0.5;
+                    localStorage.setItem('box' + itemNumber, 'opened');
+                }
             });
         } else {
             gridItem.classList.add('unopenable');
