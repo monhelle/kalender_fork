@@ -40,17 +40,21 @@ document.addEventListener('DOMContentLoaded', function() {
         // Check if the item can be opened based on the day in December
         if (i <= currentDayInDecember) {
             gridItem.classList.add('openable');
-            ribbon.classList.add('openable-rib');
-            bow.classList.add('openable-rib');
-            lid.classList.add('openable-lid');
-            background.classList.add('openable-bg'); // Add a class for openable background styling
-            textContent.classList.add('openable-text'); // Add a class for openable text styling
+
+            // Add a random palette class for openable items
+            var randomPaletteNumber = Math.floor(Math.random() * 3) + 1; // Assuming you have 3 palettes
+            gridItem.classList.add('openable' + randomPaletteNumber);
+
+            // Add corresponding palette classes to ribbon, lid, and bow
+            ribbon.classList.add('openable-rib' + randomPaletteNumber);
+            bow.classList.add('openable-rib' + randomPaletteNumber);
+            lid.classList.add('openable-lid' + randomPaletteNumber);
+
             gridItem.addEventListener('click', function() {
                 // Add your custom logic for handling opened items
-                var itemNumber = this.textContent;
-                let currentPageIndex = localStorage.getItem('currentPageIndex');
-                currentPageIndex = itemNumber
-                window.location.href = '/december/' + itemNumber + '/'// Redirect to a new page with the item number as a parameter
+                var itemNumber = this.querySelector('.grid-item-text').textContent;
+                localStorage.setItem('currentPageIndex', itemNumber);
+                window.location.href = '/december/' + itemNumber + '/'; // Redirect to a new page with the item number as a parameter
             });
         } else {
             gridItem.classList.add('unopenable');
