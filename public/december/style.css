@@ -7,3 +7,32 @@ h1 {
 form{
     text-align: center;
 }
+
+
+@media only screen and (min-width: 800px) {
+    .clickLeft{
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 6%;
+        margin-left: 10px;
+        background-image: url("../img/rightArrow.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .clickRight{
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 6%;
+        margin-right: 10px;
+        background-image: url("../img/leftArrow.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
