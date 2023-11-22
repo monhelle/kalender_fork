@@ -44,6 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     return;
                 }
 
+        
+
                 if (direction === 'left' && itemNumber > 1) {
                     // Swipe right (go to the previous date)
                     nextItemNumber = itemNumber - 1;
@@ -67,6 +69,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Join the path parts to construct the final URL
                     var finalUrl = pathParts.join('/');
                     console.log('Final URL:', finalUrl);
+
+                    localStorage.setItem('box' + itemNumber, 'opened');
+                    localStorage.setItem('box' + nextItemNumber, 'opened');
+
 
                     // Redirect to the next item
                     window.location.href = finalUrl;

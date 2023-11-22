@@ -1,67 +1,70 @@
 document.addEventListener('DOMContentLoaded', function() {
-     console.log('DOM content loaded');
-    var currentDayInDecember = new Date().getDate();
+    console.log('DOM content loaded');
+   var currentDayInDecember = new Date().getDate();
 
-    document.addEventListener('keyup', function(e) {
-    console.log("Key released:", e.key);
+   document.addEventListener('keyup', function(e) {
+   console.log("Key released:", e.key);
 
-    if (e.key === 'Escape') {
-        window.location.replace('/');
-    }
-    });
-
-
-    document.addEventListener('keydown', function(e) {
-        console.log("Key pressed:", e.key);
-
-        var direction = e.key === 'ArrowLeft' ? 'left' : e.key === 'ArrowRight' ? 'right' : '';
-
-        if (direction !== '') {
-            var pathParts = window.location.pathname.split('/');
-            var itemNumberIndex = pathParts.indexOf('december') + 1;
-            var itemNumber = itemNumberIndex < pathParts.length ? parseInt(pathParts[itemNumberIndex]) : NaN;
-
-            console.log("Item Number:", itemNumber);
-
-            if (!isNaN(itemNumber)) {
-                var nextItemNumber;
+   if (e.key === 'Escape') {
+       window.location.replace('/');
+   }
+   });
 
 
-                if (direction === 'left' && itemNumber === 1) {
-                    // Left arrow at item 1, redirect to root
-                    var rootUrl = '/';
-                    console.log("Redirecting to root:", rootUrl);
-                    window.location.assign(rootUrl);
-                    return;
-                }
+   document.addEventListener('keydown', function(e) {
+       console.log("Key pressed:", e.key);
 
-                if (direction === 'left' && itemNumber > 1) {
-                    // Left arrow (go to the previous date)
-                    nextItemNumber = itemNumber - 1;
-                } else if (direction === 'right') {
-                    // Right arrow (go to the next date)
-                    nextItemNumber = itemNumber + 1;
-                }
+       var direction = e.key === 'ArrowLeft' ? 'left' : e.key === 'ArrowRight' ? 'right' : '';
 
-                console.log("Next Item Number:", nextItemNumber);
+       if (direction !== '') {
+           var pathParts = window.location.pathname.split('/');
+           var itemNumberIndex = pathParts.indexOf('december') + 1;
+           var itemNumber = itemNumberIndex < pathParts.length ? parseInt(pathParts[itemNumberIndex]) : NaN;
 
-                if (nextItemNumber <= currentDayInDecember) {
-                    var nextItemUrl = '/' + nextItemNumber + '/';
-                    console.log('Next item URL:', nextItemUrl);
+           console.log("Item Number:", itemNumber);
 
-                    // Update the URL without 'december' part
-                    pathParts[itemNumberIndex] = nextItemNumber;
+           if (!isNaN(itemNumber)) {
+               var nextItemNumber;
 
-                    var finalUrl = pathParts.join('/');
-                    console.log('Final URL:', finalUrl);
 
-                    // Directly update the pathname
-                    window.location.pathname = finalUrl;
-                } else {
-                    alert("Ikke den datoen ennå");
-                }
-            }
-        }
-    });
+               if (direction === 'left' && itemNumber === 1) {
+                   // Left arrow at item 1, redirect to root
+                   var rootUrl = '/';
+                   console.log("Redirecting to root:", rootUrl);
+                   window.location.assign(rootUrl);
+                   return;
+               }
+
+               if (direction === 'left' && itemNumber > 1) {
+                   // Left arrow (go to the previous date)
+                   nextItemNumber = itemNumber - 1;
+               } else if (direction === 'right') {
+                   // Right arrow (go to the next date)
+                   nextItemNumber = itemNumber + 1;
+               }
+
+               console.log("Next Item Number:", nextItemNumber);
+
+               if (nextItemNumber <= currentDayInDecember) {
+                   var nextItemUrl = '/' + nextItemNumber + '/';
+                   console.log('Next item URL:', nextItemUrl);
+
+                   // Update the URL without 'december' part
+                   pathParts[itemNumberIndex] = nextItemNumber;
+
+                   var finalUrl = pathParts.join('/');
+                   console.log('Final URL:', finalUrl);
+
+                   localStorage.setItem('box' + itemNumber, 'opened');
+                   localStorage.setItem('box' + nextItemNumber, 'opened');
+
+                   // Directly update the pathname
+                   window.location.pathname = finalUrl;
+               } else {
+                   alert("Ikke den datoen ennå");
+               }
+           }
+       }
+   });
 
 });
