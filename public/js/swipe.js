@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Extract itemNumber from the URL
             var pathParts = window.location.pathname.split('/');
+            console.log(pathParts + ' created here')
             var itemNumberIndex = pathParts.indexOf('december') + 1;
             var itemNumber = itemNumberIndex < pathParts.length ? parseInt(pathParts[itemNumberIndex]) : NaN;
 
@@ -66,6 +67,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Add the next item number to the URL
                     pathParts.splice(itemNumberIndex, 0, nextItemNumber);
 
+                    pathParts = pathParts.filter(item => {
+                        console.log(`item is ${item} and type is ${typeof item}`);
+
+                        return typeof(item) === 'number' || typeof(item) === 'string' && item.length > 0;;
+                    });
                     // Join the path parts to construct the final URL
                     var finalUrl = pathParts.join('/');
                     console.log('Final URL:', finalUrl);

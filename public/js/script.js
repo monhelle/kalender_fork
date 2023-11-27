@@ -1,36 +1,36 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var gridContainer = document.getElementById('grid-container');
+    let gridContainer = document.getElementById('grid-container');
 
     // Get the current date
-    var currentDate = new Date();
+    let currentDate = new Date();
 
     // Get the current day in December
-    var currentDayInDecember = currentDate.getDate();
+    let currentDayInDecember = currentDate.getDate();
 
-    for (var i = 1; i <= 24; i++) {
-        var gridItem = document.createElement('div');
+    for (let i = 1; i <= 24; i++) {
+        let gridItem = document.createElement('div');
         gridItem.className = 'grid-item';
 
         // Additional elements for the gift box design
-        var ribbon = document.createElement('div');
+        let ribbon = document.createElement('div');
         ribbon.className = 'ribbon';
         gridItem.appendChild(ribbon);
 
-        var bow = document.createElement('div');
+        let bow = document.createElement('div');
         bow.className = 'bow';
         gridItem.appendChild(bow);
 
-        var lid = document.createElement('div');
+        let lid = document.createElement('div');
         lid.className = 'lid';
         gridItem.appendChild(lid);
 
         // Create a background element
-        var background = document.createElement('div');
+        let background = document.createElement('div');
         background.className = 'background';
         gridItem.appendChild(background);
 
         // Create the text content element
-        var textContent = document.createElement('i');
+        let textContent = document.createElement('i');
         textContent.textContent = i;
         textContent.className = 'grid-item-text'; // Add a specific class for styling
 
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
             gridItem.classList.add('openable');
 
             // Add a random palette class for openable items
-            var randomPaletteNumber = Math.floor(Math.random() * 3) + 1; // Assuming you have 3 palettes
+            let randomPaletteNumber = Math.floor(Math.random() * 3) + 1; // Assuming you have 3 palettes
             gridItem.classList.add('openable' + randomPaletteNumber);
 
             // Add corresponding palette classes to ribbon, lid, and bow
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
             lid.classList.add('openable-lid' + randomPaletteNumber);
 
             // Check if the item was previously opened
-            var isOpened = localStorage.getItem('box' + i);
+            let isOpened = localStorage.getItem('box' + i);
 
             if (isOpened) {
                 gridItem.style.opacity = 0.5; // Set the opacity if the box was opened
@@ -59,9 +59,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             gridItem.addEventListener('click', function () {
                 // Add your custom logic for handling opened items
-                var itemNumber = this.querySelector('.grid-item-text').textContent;
+                let itemNumber = this.querySelector('.grid-item-text').textContent;
                 localStorage.setItem('currentPageIndex', itemNumber);
-                window.location.href = '/december/' + itemNumber + '/'; // Redirect to a new page with the item number as a parameter
+                window.location.href = '/december/' + itemNumber; // Redirect to a new page with the item number as a parameter
 
                 // Toggle the opacity and store the state in local storage
                 {
