@@ -43,12 +43,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Add a random palette class for openable items
             let randomPaletteNumber = Math.floor(Math.random() * 3) + 1; // Assuming you have 3 palettes
-            gridItem.classList.add('openable' + randomPaletteNumber);
+            // gridItem.classList.add('openable' + randomPaletteNumber);
 
-            // Add corresponding palette classes to ribbon, lid, and bow
-            ribbon.classList.add('openable-rib' + randomPaletteNumber);
-            bow.classList.add('openable-rib' + randomPaletteNumber);
-            lid.classList.add('openable-lid' + randomPaletteNumber);
+            // // Add corresponding palette classes to ribbon, lid, and bow
+            // ribbon.classList.add('openable-rib' + randomPaletteNumber);
+            // bow.classList.add('openable-rib' + randomPaletteNumber);
+            // lid.classList.add('openable-lid' + randomPaletteNumber);
 
             // Check if the item was previously opened
             let isOpened = localStorage.getItem('box' + i);
