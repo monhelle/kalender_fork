@@ -47,14 +47,14 @@ body{
     transition-duration: 0.5s;
 }
 #spm:hover{
-    box-shadow: 0 0 100px lightblue;
+    box-shadow: 0 0 100px #80A5B2;
 }
 
 form{
     width: 60%;
     margin: auto;
-    background-color: black;
-    color: lime;
+    background-color: #254384;
+    color: white;
     font-weight: bold;
     padding: 10px;
     border: 5px solid;
@@ -62,12 +62,12 @@ form{
 }
 form input{
     width: 40%;
-    background-color: lightblue;
-    color: red;
+    background-color: #80A5B2;
+    color: #b6232b;
     font-family: cursive;
     font-weight: bold;
     padding: 5px;
-    border: 2px solid;
+    border: 2px solid white;
     border-radius: 50px;
 }
 
@@ -77,18 +77,30 @@ form input[type="submit"]{
 }
 
 form input[type="submit"]:hover{
-    background-color: red;
-    color: lightblue;
+    background-color: b6232b;
+    color: #80A5B2;
 }
 
 @media only screen and (max-width: 660px) {
     body{
         height: 100vh;
+        width: 100vw;
+        margin: 0;
         background-image: url("images/kalendertelefonRudi.png");
         justify-content: center;
     }
     #imgDiv{
         margin: 0;
         margin: 0 auto 0 auto;
+        max-width: 70%;
+    }
+
+    #spm{
+        max-width: 80%;
+        transition-duration: 0.5s;
+    }
+
+    form{
+        font-size: x-large;
     }
 }
