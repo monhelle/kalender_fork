@@ -1,0 +1,76 @@
+:root {
+    /* Palette 1 */
+    --ValueVH: 64vh;
+    --ColorWhite: #2e3192;
+    --FormVH: 58vh;
+}
+
+
+Body {
+    background-image:url(kalenderdesktop.png);
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 767px) {
+    body {
+      background-image: url(kalendertelefon.png); /* Background image for phones */
+    }
+    :root {
+        --ValueVH: 45vh;
+        --FormVH: 40vh;
+    }
+
+}
+
+.Question {
+    height: var(--ValueVH);
+    background-color: var(--ColorWhite);
+    aspect-ratio: 1/1;
+    border-radius: 15px;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Task {
+    aspect-ratio: 1/1;
+    width: 95%;
+    border-radius: 10px;
+}
+
+.Dato1 {
+    color: white;
+}
+
+.Form input {
+    margin-top: 5px;
+    width: var(--FormVH);
+    height: 50px;
+    font-size: medium;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.Form label {
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.FormContainer {
+    margin-top: 10px;
+    width: var(--ValueVH);
+    aspect-ratio: 2/1;
+    background-color: var(--ColorWhite);
+    border-radius: 15px;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
