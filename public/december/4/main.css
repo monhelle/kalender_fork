@@ -1,0 +1,121 @@
+@font-face{
+    font-family: KariPro;
+    src: url(./Font/Kari.ttf);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(./Photo/desktop_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    color: red;
+    text-shadow: 2px 2px white;
+    margin-top: 0.5%;
+    margin-bottom: 1%;
+    text-align: center;
+    font-size: 50px;
+    font-family: KariPro;
+}
+
+.form{
+    color: red;
+    background-color: rgb(255,255,255,0.3);
+    text-align: center;
+    margin-left: 38%;
+    margin-right: 38%;
+    padding-bottom: 0.01%;
+    font-family: KariPro;
+    text-shadow: 1px 1px white;
+    font-size: 21px;
+    border-radius: 10px;
+}
+
+input{
+    color: red;
+    box-shadow: 3px 3px red;
+    border-radius: 7px;
+}
+
+.decemberPhoto{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 27%;
+    margin-bottom: 2%;
+}
+
+.left{
+    width: 7%;
+    position: inline;
+    float: left;
+    margin-left: 1%;
+    margin-top: -14%;
+}
+
+.right{
+    width: 7%;
+    position: inline;
+    float: right;
+    margin-right: 1%;
+    margin-top: -13%;
+}
+
+.clickRight{
+    display: none;
+}
+
+.clickLeft{
+   display: none;
+}
+
+@media only screen and (max-width: 800px){
+    body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(./Photo/kalendertelefonRudi.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    h1{
+        color: red;
+        text-align: center;
+        text-shadow: 2px 2px white;
+        margin-bottom: 7%;
+        margin-top: 35%;
+        font-size: 50px;
+        font-family: KariPro;
+    }
+    .decemberPhoto{
+        display: flex;
+        margin-left: auto;
+        margin-right: 18%;
+        width: 63%;
+        margin-bottom: 9%;
+    }
+    .form{
+        color: red;
+        background-color: rgb(255,255,255,0.3);
+        text-align: center;
+        margin-left: 21%;
+        margin-right: 28%;
+        width: 60%;
+        height: auto;
+        padding-bottom: 0.01%;
+        font-family: KariPro;
+        text-shadow: 1px 1px white;
+        font-size: 26px;
+        border-radius: 10px;
+    }
+    .left{
+        display: none;
+    }
+    .right{
+        display: none;
+    }
+}

@@ -1,0 +1,21 @@
+.video{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50%;
+    margin-bottom: 15px;
+}
+
+.form{
+    text-align: center;
+    background-color: whitesmoke;
+    margin-right: 40%;
+    margin-left: 40%;
+    border-radius: 10px;
+}
+
+
+h1 {
+    color:white;
+    font-size: 100px;
+}
