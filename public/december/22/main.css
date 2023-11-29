@@ -1,0 +1,50 @@
+body {
+    background-image: url("./innhold/kalenderdesktop2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+
+h1{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 80px;
+}
+
+
+video{
+position: fixed;
+top: 40%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 650;
+height: auto;
+}
+
+
+#form22{
+position: fixed;
+top: 80%;
+left: 50%;
+transform: translate(-50%, -50%);
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@media only screen and (max-width: 660px) {
+    body {
+        background-image: url("./innhold/kalendertelefonRudi.png");
+    }
+
+
+    h1 {
+        margin-top: 150px;
+    }
+    
+    video {
+        width: 400px;
+        height: 300px;
+    }
+    
+}
