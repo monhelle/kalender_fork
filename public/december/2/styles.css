@@ -1,0 +1,108 @@
+h1 {
+    padding-top: 3vh;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Style Script', cursive;
+    letter-spacing: 2px;
+}
+
+.form {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Style Script', cursive;
+    font-size: 130%;
+    letter-spacing: 1px;
+    border-radius: 50px;
+}
+
+.imageContainer {
+    padding-top: 3vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    border-radius: 5%;
+    /* width: 25vw; */
+    height: 50vh;
+    margin-bottom: 5vh;
+}
+
+input[type=text] {
+    border-radius: 5px;
+    border: none;
+    height: 3vh;
+}
+
+input[type=submit] {
+    border: none; 
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Style Script', cursive;
+    height: fit-content;
+    font-size: 100%;
+    border-radius: 7px;
+}
+
+@media only screen and (max-width: 600px) {
+    
+    body {
+        box-sizing: border-box;
+        background-image: url("../../img/kalendertelefonRudi.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    h1 {
+        font-size: 220%;
+    }
+
+    .form {
+        font-size: 170%;
+
+    }
+
+    input[type=text] {
+        height: 4vh;
+    }
+
+    .image {
+        height: 40vh;
+    }
+
+}
+
+
+@media only screen and (max-width: 400px) {
+
+    body {
+        box-sizing: border-box;
+        background-image: url("../../img/kalendertelefonRudi.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    h1 {
+        font-size: 220%;
+    }
+
+    .form {
+        font-size: 170%;
+
+    }
+
+    input[type=text] {
+        height: 4vh;
+    }
+
+    .image {
+        height: 35vh;
+    }
+
+}
