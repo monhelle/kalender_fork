@@ -19,3 +19,11 @@ h1 {
     color:white;
     font-size: 100px;
 }
+
+
+@media screen and (max-width: 660px) {
+    .video{
+        height: auto;
+        width: 90%;
+    }
+}
