@@ -6,14 +6,12 @@ body {
   margin: 0;
 }
 
-
-
 .form {
   color: white;
   background-color: blue;
 }
 
-label{
+label {
   color: black;
 }
 
@@ -33,14 +31,14 @@ video {
   max-width: 200px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #C6AC8F;
+  background-color: #c6ac8f;
   border-radius: 20px;
   justify-content: center;
   align-items: center;
-  opacity: 0.70;
+  opacity: 0.7;
 }
 
-.form:hover{
+.form:hover {
   opacity: 1;
   transition: 500ms;
 }
@@ -53,10 +51,14 @@ video {
   body {
     background-image: url(../7/IMG/kalendertelefonRudi.png);
   }
-  video{
+  video {
     width: 90%;
   }
-  #wrapper{
-  margin-top: 10vh;
-}
+  #wrapper {
+    margin-top: 10vh;
+  }
+
+  .videoContainer {
+    justify-content: center;
+  }
 }
