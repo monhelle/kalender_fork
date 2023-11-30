@@ -1,0 +1,51 @@
+body{
+    background-image: url("back.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+video {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    height: 35%;
+}
+
+h1{
+    color: #ffffff;
+}
+
+form {
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
+    max-width: 400px; 
+    margin: 20px auto; 
+}  
+
+@media only screen and (max-width: 660px) {
+    body{
+        margin-top: 35%;
+        background-image: url("mob.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+    }
+    
+    video {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        height: 35%;
+    }
+    
+    form {
+        background-color: #ffffff; 
+        border-radius: 10px; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        padding: 20px; 
+        max-width: 50%; 
+        margin: 20px auto; 
+    }  
+}
