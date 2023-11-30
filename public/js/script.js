@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const DAYSINCALENDAR = 24;
     let gridContainer = document.getElementById('grid-container');
-
+    
     // Get the current date
     let currentDate = new Date();
 
@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     for (let i = 1; i <= DAYSINCALENDAR; i++) {
         let gridItem = document.createElement('div');
         gridItem.className = 'grid-item';
-
         // Additional elements for the gift box design
         let ribbon = document.createElement('div');
         ribbon.className = 'ribbon';
@@ -42,34 +41,14 @@ document.addEventListener('DOMContentLoaded', function () {
         // Check if the item can be opened based on the day in December
         if (i <= currentDayInDecember) {
             gridItem.classList.add('openable');
-
-            // Add a random palette class for openable items
-            let randomPaletteNumber = Math.floor(Math.random() * 3) + 1; // Assuming you have 3 palettes
-            // gridItem.classList.add('openable' + randomPaletteNumber);
-
-            // // Add corresponding palette classes to ribbon, lid, and bow
-            // ribbon.classList.add('openable-rib' + randomPaletteNumber);
-            // bow.classList.add('openable-rib' + randomPaletteNumber);
-            // lid.classList.add('openable-lid' + randomPaletteNumber);
-
-            // Check if the item was previously opened
-            let isOpened = localStorage.getItem('box' + i);
-
-            if (isOpened) {
-                gridItem.style.opacity = 0.5; // Set the opacity if the box was opened
-            }
-
-            gridItem.addEventListener('click', function () {
+            
+            gridItem.addEventListener('click', e => {
+                e.preventDefault();
                 // Add your custom logic for handling opened items
                 let itemNumber = this.querySelector('.grid-item-text').textContent;
                 localStorage.setItem('currentPageIndex', itemNumber);
-                window.location.href = '/december/' + itemNumber; // Redirect to a new page with the item number as a parameter
-
-                // Toggle the opacity and store the state in local storage
-                {
-                    this.style.opacity = 0.5;
-                    localStorage.setItem('box' + itemNumber, 'opened');
-                }
+                const href = `/december/${itemNumber}`;
+                window.location.href = href; // Redirect to a new page with the item number as a parameter
             });
         } else {
             gridItem.classList.add('unopenable');
