@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>December Page</title>
+    <title>Bleiker Kalender</title>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <script src="js/script.js" defer></script>
     <script src="js/swipe.js" defer></script>
@@ -14,23 +14,33 @@
 </head>
 <body>
     <div class="content-wrapper">
-        <header>
-            <h1>December</h1>
-        </header>
-        <main id="grid-container">
+
+        <div id="column-left" class="margin">
             
-        </main>
-        
-        <footer>
-            <div id="progress-container">
-                <div id="pad-bar">
-                    <div id="date-display"></div>
-                    <div id="progress-bar"></div>
-                    <div id="progress-display">Progress: <span id="percentage"></span>%</div>
+        </div>
+        <div id="column-mid">  
+            <h1>Bleikerkalender</h1>
+     
+            <main id="grid-container">
+                
+            </main>
+            
+            <footer>
+                <div id="progress-container">
+                    <div id="pad-bar">
+                        <div id="date-display"></div>
+                        <div id="progress-bar"></div>
+                        <div id="progress-display">Progress: <span id="percentage"></span>%</div>
+                    </div>
                 </div>
+                <p> &copy; 2023 Petter, Theodor, Martin og Lukas</p>
+            </footer>
+        </div>
+        <div id="column-right" class="margin">
+            <div class="logo">
+                <img src="/img/kalenderlogo.png" alt="page logo" srcset="">
             </div>
-            <p> &copy; 2023 Petter, Theodor, Martin og Lukas</p>
-        </footer>
+        </div>
     </div>
 </body>
 </html>

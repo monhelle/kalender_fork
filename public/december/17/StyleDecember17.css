@@ -1,0 +1,87 @@
+body {
+    background-image: url("../../img/desktop_bg.png");
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+.bodywrapper{
+    display: flex;
+    margin: auto auto;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    flex-direction: column;
+    justify-content: space-around;
+    /* background-color: crimson; */
+}
+
+.heading{
+    display: flex;
+    margin: 0 auto;
+    position: static;
+    padding: 0;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(0, 0, 0) 2.5px 2.5px 3px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size:x-large;
+}
+
+.form{
+    display: flex;
+    margin: 0 auto;
+    position: static;
+    color: rgb(0, 0, 0);
+    /* text-shadow: rgb(63, 0, 0) 1px 1px 3px; */
+    background-color: rgb(255, 255, 255);
+    padding: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font:bold ;
+}
+
+.contentvideo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.videoframe {
+    margin: 0 auto;
+    max-width: 40%;
+    min-width: 20%;
+    height: auto;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 6em;
+    padding-right: 6em;
+    padding-bottom: 1em;
+}
+
+footer a{
+    color: rgb(0, 0, 0);
+}
+
+
+@media only screen and (max-width: 660px) {
+    body {
+        background-image: url("./kalendertelefonRudi.png");
+    }
+    .contentvideo{
+        width: 100%;
+        height: auto;
+    } 
+    .videoframe {
+        max-width: 90%;
+    }
+
+    .bodywrapper{
+       margin-top: 16%;
+    }
+}
