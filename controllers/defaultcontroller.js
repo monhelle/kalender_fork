@@ -7,8 +7,15 @@ const index =  (req, res) => {
 const getdate = (req, res, next) => {
     const day = req.params.day;
     const month = req.params.month;
+    const currentDate = new Date();
+    console.log('trying to access this date:', currentDate)
     if(day && month) {
-        res.sendFile(path.resolve(`${__dirname}/../public/${month}/${day}/content.html`));
+        if(month == 'december' && day >= currentDate.getDate()) {
+            res.sendFile(path.resolve(`${__dirname}/../public/${month}/${day}/content.html`));
+        } else {
+            console.log('naughty naughty');
+            res.redirect('/');
+        }
     } else {
         next();
     }
