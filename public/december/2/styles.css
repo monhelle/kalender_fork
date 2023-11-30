@@ -82,6 +82,7 @@ input[type=submit] {
 
     body {
         box-sizing: border-box;
+
         background-image: url("../../img/kalendertelefonRudi.png");
         background-repeat: no-repeat;
         background-size: cover;

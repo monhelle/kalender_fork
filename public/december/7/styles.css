@@ -1,0 +1,64 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.form {
+  color: white;
+  background-color: blue;
+}
+
+label {
+  color: black;
+}
+
+video {
+  display: flexbox;
+  width: 100vh;
+}
+
+.videoContainer {
+  display: flex;
+  /* border-radius: 50px;
+  overflow: hidden; */
+}
+
+.form {
+  display: flexbox;
+  max-width: 200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #c6ac8f;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+}
+
+.form:hover {
+  opacity: 1;
+  transition: 500ms;
+}
+
+.form input {
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-image: url(../7/IMG/kalendertelefonRudi.png);
+  }
+  video {
+    width: 90%;
+  }
+  #wrapper {
+    margin-top: 10vh;
+  }
+
+  .videoContainer {
+    justify-content: center;
+  }
+}
