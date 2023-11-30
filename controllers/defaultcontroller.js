@@ -14,7 +14,7 @@ const getdate = (req, res, next) => {
     }
 }
 
-const failedroute = (req,res,next)=>{
+const failedroute = (req,res)=>{
     res.status(404).render('404', {title: '404'});
 }
 

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {index,getdate,failedroute} = require('../controllers/defaultcontroller');
+const {index, getdate,failedroute} = require('../controllers/defaultcontroller');
 
 router.get('/', index);
 

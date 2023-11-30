@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     const LASTCALENDARDAY = 24;
-    let gridContainer = document.getElementById('grid-container');
-    let progressContainer = document.getElementById('progress-container');
     let progressBar = document.getElementById('progress-bar');
     let dateDisplay = document.getElementById('date-display');
     let percentageDisplay = document.getElementById('percentage'); // New line

@@ -1,4 +1,6 @@
+//this script handles dynamic generation of the grid items.
 document.addEventListener('DOMContentLoaded', function () {
+    const DAYSINCALENDAR = 24;
     let gridContainer = document.getElementById('grid-container');
 
     // Get the current date
@@ -7,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Get the current day in December
     let currentDayInDecember = currentDate.getDate();
 
-    for (let i = 1; i <= 24; i++) {
+    for (let i = 1; i <= DAYSINCALENDAR; i++) {
         let gridItem = document.createElement('div');
         gridItem.className = 'grid-item';
 
