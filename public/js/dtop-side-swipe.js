@@ -1,3 +1,6 @@
+
+let startX, startY, endX, endY;
+
 document.addEventListener('keydown', e => {
     console.log("Key released:", e.key);
 
@@ -22,6 +25,25 @@ document.addEventListener('keydown', e => {
     }
 });
 
+document.addEventListener('touchstart', function (e) {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+});
+
+document.addEventListener('touchend', function (e) {
+    endX = e.changedTouches[0].clientX;
+    endY = e.changedTouches[0].clientY;
+
+    let deltaX = endX - startX;
+    let deltaY = endY - startY;
+    // Check if the movement was mostly horizontal
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        // Horizontal swipe; positive value means left swipe,
+        // negative value means right swipe.
+        deltaX > 0 ? setNextDate(-1) : setNextDate(1);
+    }
+});
+
 /**
  * @param {Number} nextDate the next date you want to display, relative to the current date. Will add positive numbers, and subtract
  * negative numbers.
@@ -33,77 +55,23 @@ function setNextDate(nextDate){
     pathParts = pathParts.filter( item => { 
         return typeof(item) === 'number' || typeof(item) === 'string' && item.length > 0;
     });
-
     let newDate =  Number(pathParts[pathParts.length-1]) + nextDate;
-    pathParts[pathParts.length-1] = newDate > 0 && newDate <= 24 ? newDate : pathParts[pathParts.length-1];
- 
-    window.location.assign(`/${pathParts.join('/')}`);
 
+    if(isValidDate(newDate)){
+        console.log('date was valid!')
+        pathParts[pathParts.length-1] = newDate > 0 && newDate <= 24 ? newDate : pathParts[pathParts.length-1];
+        window.location.assign(`/${pathParts.join('/')}`);
+    }
 }
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     console.log('DOM content loaded');
-//    let currentDayInDecember = new Date().getDate();
+function isValidDate(nextdate){
+    isValid = false;
+    let date = new Date();
+    
+    // zero based counting leaves -1 offset for numbers of months
+    if(date.getMonth() > 10 && date.getDate() >= nextdate) {
+        isValid = true;
+    }
 
-   
-
-
-//    document.addEventListener('keydown', function(e) {
-//        console.log("Key pressed:", e.key);
-
-//        let direction = e.key === 'ArrowLeft' ? 'left' : e.key === 'ArrowRight' ? 'right' : '';
-
-       
-
-//        if (direction !== '') {
-//            let pathParts = window.location.pathname.split('/');
-//            let itemNumberIndex = pathParts.indexOf('december') + 1;
-//            let itemNumber = itemNumberIndex < pathParts.length ? parseInt(pathParts[itemNumberIndex]) : NaN;
-
-//            console.log("Item Number:", itemNumber);
-
-//            if (!isNaN(itemNumber)) {
-//                let nextItemNumber;
-
-
-//                if (direction === 'left' && itemNumber === 1) {
-//                    // Left arrow at item 1, redirect to root
-//                    let rootUrl = '/';
-//                    console.log("Redirecting to root:", rootUrl);
-//                    window.location.assign(rootUrl);
-//                    return;
-//                }
-
-//                if (direction === 'left' && itemNumber > 1) {
-//                    // Left arrow (go to the previous date)
-//                    nextItemNumber = itemNumber - 1;
-//                } else if (direction === 'right') {
-//                    // Right arrow (go to the next date)
-//                    nextItemNumber = itemNumber + 1;
-//                }
-
-//                console.log("Next Item Number:", nextItemNumber);
-
-//                if (nextItemNumber <= currentDayInDecember) {
-//                    let nextItemUrl = '/' + nextItemNumber;
-//                    console.log('Next item URL:', nextItemUrl);
-
-//                    // Update the URL without 'december' part
-//                    pathParts[itemNumberIndex] = nextItemNumber;
-
-//                    let finalUrl = pathParts.join('/');
-//                    console.log('Final URL:', finalUrl);
-
-//                    localStorage.setItem('box' + itemNumber, 'opened');
-//                    localStorage.setItem('box' + nextItemNumber, 'opened');
-
-//                    // Directly update the pathname
-//                    //window.location.pathname = finalUrl;
-//                } else {
-//                    alert("Ikke den datoen ennå");
-//                }
-//            }
-//        }
-//    });
-
-// });
+    return isValid;
+}

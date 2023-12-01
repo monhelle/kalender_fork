@@ -11,18 +11,20 @@
 
     --margin-width: 25vw;
     --background-shadow: #28857c;
+    --error-bg:var(--main-bg-color);
+    --error-font: white;
+    --success-bg: #0f4c6cdb;
 }
 body {
-    font-family: Arial, sans-serif;
     display: flex;
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    background-image: url("../img/desktop_bg.png");
+    background-image: url("/img/desktop_bg.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right;
-    
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;  
 }
 .bow {
     position: absolute;
@@ -71,6 +73,16 @@ body {
     text-align: center;
     color: white;
     padding: 5px;
+}
+
+.error {
+    background-color: var(--error-bg);
+    color: var(--error-font)
+}
+
+.filler {
+    color: white;
+    text-align: center;
 }
 footer {
     background-color: var(--header-footer-bg);
@@ -183,7 +195,10 @@ footer {
     z-index: 2;
     background-color: white;
 } */
-
+.success {
+    background-color: var(--success-bg);
+    box-shadow: 4px 10px 50px var(--background-shadow);
+}
 .sticky-header {
     position: sticky;
     top: 0;
@@ -218,7 +233,7 @@ footer {
     }
 
     #column-mid h1 {
-        font-size: 12vw;
+        font-size: 10vw;
     }
 }
 

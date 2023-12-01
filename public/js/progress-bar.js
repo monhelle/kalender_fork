@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const LASTCALENDARDAY = 24;
-    let gridContainer = document.getElementById('grid-container');
-    let progressContainer = document.getElementById('progress-container');
-    let progressBar = document.getElementById('progress-bar');
+    let progressBar = document.querySelector('#progress-bar');
     let dateDisplay = document.getElementById('date-display');
     let percentageDisplay = document.getElementById('percentage'); // New line
 
@@ -12,9 +10,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get the current day in December and stop counting after the last day of the calendar
     let currentDayInDecember = currentDate.getDate();
     currentDayInDecember = currentDayInDecember <= LASTCALENDARDAY ? currentDayInDecember : LASTCALENDARDAY;
+
     // Calculate progress percentage
-    let progressPercentage = (currentDayInDecember / LASTCALENDARDAY) * 100;
+    let progressPercentage = 0;
+    if(currentDate.getMonth()==11){
+        progressPercentage = (currentDayInDecember / LASTCALENDARDAY) * 100;
+
+    }
+    
+    //Set the width of the progress bar
     progressBar.style.width = progressPercentage + '%';
+    
     // Display the date
     dateDisplay.textContent = currentDate.toDateString();
 

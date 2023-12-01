@@ -1,0 +1,8 @@
+<%-include('partials/header')%>
+<% if(typeof(message) != 'undefined') { %> 
+    <h1 class="error"><%=message%></h1>
+<% } else { %>
+    <h1 class="error"> ooooops.. noe gikk galt!</h1>
+<% } %>
+<p class="filler">ho ho ho !</p>
+<%-include('partials/footer')%>
