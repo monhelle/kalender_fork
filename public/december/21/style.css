@@ -2,6 +2,8 @@ body {
     background-image: url("kalenderdesktop2.png");
     background-size: cover;
     flex-direction: column;
+    display: flex;
+
 }
 h1  {
     display: flex;

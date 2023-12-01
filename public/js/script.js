@@ -51,12 +51,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.location.href = href; // Redirect to a new page with the item number as a parameter
             });
         } else {
+            /*uncomment before production*/
             // gridItem.classList.add('unopenable');
             // ribbon.classList.add('unopenable-rib');
             // bow.classList.add('unopenable-rib');
             // lid.classList.add('unopenable-lid');
             // background.classList.add('unopenable-bg'); // Add a class for unopenable background styling
             // textContent.classList.add('unopenable-text'); // Add a class for unopenable text styling
+            
+            /*remove before production*/
             let itemNumber = this.querySelector('.grid-item-text').textContent;
             localStorage.setItem('currentPageIndex', itemNumber);
             const href = `/december/${itemNumber}`;

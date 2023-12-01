@@ -5,7 +5,7 @@ const left = document.querySelector(".clickLeft")
 const right = document.querySelector(".clickRight")
 
 html = `<form id="answerform" method='POST'>
-    <label for="name">Skriv navnet ditt her</label><br>
+    <label for="name">Skriv eposten din her</label><br>
     <input name="epost" type="text" for="name"><br><br>
     <label for="answer">Skriv svaret ditt her</label><br>
     <input name="svar" type="text" for="svar"><br><br>
