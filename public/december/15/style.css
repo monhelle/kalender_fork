@@ -1,0 +1,16 @@
+body {
+    background: url(desktop_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+video{
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    height: 35%;
+}
+
+h1{
+    color: white;
+}

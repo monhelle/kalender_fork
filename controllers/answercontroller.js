@@ -2,6 +2,7 @@ const Answer = require('../model/answer');
 
 const postAnswer = async (req, res, next) => {
     const {epost, svar} = req.body;
+    console.log(req.body)
     const date = req.params.day;
     let result;
     try {
