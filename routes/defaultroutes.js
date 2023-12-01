@@ -1,8 +1,10 @@
 const router = require('express').Router();
 const {index, getdate,failedroute} = require('../controllers/defaultcontroller');
-const {postAnswer, notapproved, approved} = require('../controllers/answercontroller');
+const {postAnswer, notapproved, approved, getAllAnswers} = require('../controllers/answercontroller');
 
 router.get('/', index);
+
+router.get('/allanswers/:date', getAllAnswers);
 
 router.get('/:month/:day',getdate);
 
