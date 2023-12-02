@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(routes);
 
 app.listen(PORT, () => {
-    mongoose.connect(process.env.DBSTRING, {dbName: "julekalender"})
+    mongoose.connect(process.env.DBSTRING, {dbname: process.env.DBNAME})
         .then(result => {
             result.connections.forEach(connection => {
                     console.log(`connected to DB: ${connection.name}`)

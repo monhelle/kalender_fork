@@ -58,7 +58,6 @@ function setNextDate(nextDate){
     let newDate =  Number(pathParts[pathParts.length-1]) + nextDate;
 
     if(isValidDate(newDate)){
-        console.log('date was valid!')
         pathParts[pathParts.length-1] = newDate > 0 && newDate <= 24 ? newDate : pathParts[pathParts.length-1];
         window.location.assign(`/${pathParts.join('/')}`);
     }

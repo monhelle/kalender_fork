@@ -6,13 +6,13 @@ const right = document.querySelector(".clickRight")
 
 html = `<form id="answerform" method='POST'>
     <label for="name">Skriv eposten din her</label><br>
-    <input name="epost" type="text" for="name"><br><br>
+    <input name="epost" type="text" for="name" placeholder="deg@viken.no"><br><br>
     <label for="answer">Skriv svaret ditt her</label><br>
     <input name="svar" type="text" for="svar"><br><br>
     <input type="submit" value="Send inn">
 </form>`
 
-form.innerHTML = html
+form.innerHTML = html;
 form.addEventListener('submit', (event)=> {
     const url = window.location;
     console.log(url);

@@ -1,0 +1,11 @@
+<%-include("partials/header") %>
+    <% if(Array.isArray(result) && Array.length > 0) { %>
+        <%for(item of result) {%>
+            <div class="answer">
+                <h1><%=item.epost%></h1>
+                <p><%=item.svar%></p>
+            </div>
+
+        <%}%>
+    <%}%>
+<%-include("partials/footer") %>
