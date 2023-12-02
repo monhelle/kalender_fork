@@ -17,7 +17,7 @@ const getAllAnswers = async (req, res, next) => {
     const date = req.params.date;
     try {
         result = await Answer.find({date})
-        result.length > 0 ? res.render('allanswers', {result}):res.render({result:false});
+        result.length > 0 ? res.render('allanswers', {result,date, cssList: ['/css/answers.css']}):res.render('allanswers', {cssList: ['/css/answers.css'], result:false});
     } catch(error){
         console.log(error.message);
         res.end();

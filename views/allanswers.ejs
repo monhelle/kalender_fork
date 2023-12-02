@@ -1,11 +1,14 @@
 <%-include("partials/header") %>
     <% if(Array.isArray(result) && Array.length > 0) { %>
-        <%for(item of result) {%>
-            <div class="answer">
-                <h1><%=item.epost%></h1>
-                <p><%=item.svar%></p>
-            </div>
-
-        <%}%>
+        <div id="answerlist">
+            <h1>Svar mottatt for <%=date%>. Desember</h1>
+            <%for(item of result) {%>
+                <div class="answer">
+                    <h2><%=item.epost%></h2>
+                    <p><%=item.svar%></p>
+                </div>
+                
+            <%}%>
+        </div>
     <%}%>
 <%-include("partials/footer") %>
