@@ -45,7 +45,8 @@ document.addEventListener('DOMContentLoaded', function () {
             gridItem.addEventListener('click', e => {
                 e.preventDefault();
                 // Add your custom logic for handling opened items
-                let itemNumber = this.querySelector('.grid-item-text').textContent;
+                let itemNumber = e.target.lastChild.innerHTML;
+                // let itemNumber = this.querySelector('.grid-item-text').textContent;
                 localStorage.setItem('currentPageIndex', itemNumber);
                 const href = `/december/${itemNumber}`;
                 window.location.href = href; // Redirect to a new page with the item number as a parameter
