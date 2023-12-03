@@ -59,7 +59,6 @@ body {
         background-image: url("picture/kalenderphone.png");
         background-repeat: no-repeat;
         background-size: cover;
-        background-color: blue;
 
     }
 
@@ -88,7 +87,7 @@ body {
     body {
         box-sizing: border-box;
 
-        background-image: url("../../img/kalendertelefonRudi.png");
+        background-image: url("picture/kalenderphone.png");
         background-repeat: no-repeat;
         background-size: cover;
 
