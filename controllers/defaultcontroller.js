@@ -1,5 +1,5 @@
 const path = require('path');
-const DEBUG = false;
+const DEBUG =  process.env.DEBUG || false;
 
 const index =  (req, res) => {
     res.render('index');

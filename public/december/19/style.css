@@ -7,76 +7,37 @@ body, html {
 body {
     background: url('DesktopFinal.jpg');
     background-size: cover;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: fixed;
-
     height: 100vh;
 }
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 50%;
 
-h1 {
-    position: fixed;
-    top: -5%;
+}
+
+.titleDiv h1 {
     color: white;
-
-    font-size: 500%;
+    font-size: 3rem;
 }
 
 .form {
-    width: 325px;
-    height: 125px;
-
-    position: absolute;
-    top: 250px;
-    left: 205px;
-    transform: translate(-50%, -50%);
-
-    padding: 20px;
-    font-size: 100%;
+    width: 30ch;
+    margin: 0 auto;
+    padding: 1rem;
     text-align: center; 
-    color: black; 
+    color: var(--header-footer-text); 
+    background-color: var(--header-footer-bg);
 }
 
 .videoDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    background-color: rgb(50, 75, 255);
-    border-bottom: 5px solid rgb(7, 17, 126);
-    border-top: 5px solid rgb(7, 17, 126);
-    border-left: 5px solid rgb(7, 17, 126);
-    border-right: 5px solid rgb(7, 17, 126);
-    border-radius: 25px;
+    background-color: var(--header-footer-bg);
+    max-height: 50%;
 
-    width: 50vw;
-    max-width: 750px;
-    height: 40vh;
-    max-height: 450px;
-
-    position: relative;
-    top: 325px;
-    left: 400px;
-
-    transform: translate(-50%, -50%);
-
-    z-index: -2;
 }
 
-.video-container {
-    width: 90%;
-    height: 100%;
-
-    position: fixed;
-    top: auto;
-    left: auto;
-
-    object-fit: cover;
-    z-index: -1;
-}
 
 .video-container video {
     width: 100%;
@@ -87,75 +48,15 @@ h1 {
     body {
         background: url('MobilFinal.jpg');
         background-size: cover;
-
-        position: fixed;
     }
-
-    h1 {
-        position: fixed;
-        top: -1%;
-        left: 40%;
-        color: white;
-    
-        font-size: 250%;
-    }
-    
-    .form {
-        width: 325px;
-        height: 125px;
-    
-        position: absolute;
-        top: 550px;
-        left: 205px;
-        transform: translate(-50%, -50%);
-    
-        padding: 20px;
-        font-size: 100%;
-        text-align: center; 
-        color: black; 
-    }
-
-    .videoDiv {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    
-        background-color: rgb(50, 75, 255);
-        border-bottom: 5px solid rgb(7, 17, 126);
-        border-top: 5px solid rgb(7, 17, 126);
-        border-left: 5px solid rgb(7, 17, 126);
-        border-right: 5px solid rgb(7, 17, 126);
-        border-radius: 25px;
-    
-        width: 70vw;
-        max-width: 750px;
-        height: 20vh;
-        max-height: 450px;
-    
-        position: fixed;
-        top: 350;
-        left: 200px;
-    
-        transform: translate(-50%, -50%);
-
-        z-index: -2;
-    }
-
-    .video-container {
-        width: 90%;
-        height: 100%;
-    
-        position: fixed;
-        top: auto;
-        left: auto;
-
-    
-        object-fit: cover;
-        z-index: -1;
-    }
-    
-    .video-container video {
+    .content-wrapper {
         width: 100%;
-        height: 100%
+    }
+    .form {
+        font-size: 1.4rem;
+        margin-top: 5ch;
+    }
+    .form input{
+        font-size: 1.4rem;
     }
 }
