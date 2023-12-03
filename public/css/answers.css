@@ -1,0 +1,35 @@
+body {
+    background-color: var(--success-bg);
+}
+
+#answerlist {
+    font-size: 12rem;
+}
+
+#answerlist .answer-header {
+    background-color: var(--success-bg);
+    color: white;
+    font-size: 1rem;
+    padding: 1rem;
+    margin-bottom: 10vh;
+}
+
+#answerlist .answer-header > *{
+    text-align: center;
+}
+
+#answerlist .answer {
+    display: flex;
+    padding: 0.2ch 1ch;
+    margin: 1px;
+    background-color: aliceblue;
+}
+
+#answerlist .answer > * {
+    display: inline-block;
+    color: green;
+    font-size: 2rem;
+    margin: 0 1ch;
+    width: 20ch;
+    
+}

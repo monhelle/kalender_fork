@@ -1,11 +1,13 @@
 require('dotenv').config();
 const express = require("express");
-const mongoose = require('mongoose');
+const {connectToDB} = require('./handlers/dbhandler');
 const app = express();
 const routes = require('./routes/defaultroutes');
 
 //Environment variables
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+const dbname = process.env.DBNAME;
+const dbstring = process.env.DBSTRING;
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public/'));
@@ -14,15 +16,9 @@ app.use(express.json());
 app.use(routes);
 
 app.listen(PORT, () => {
-    mongoose.connect(process.env.DBSTRING, {dbname: process.env.DBNAME})
-        .then(result => {
-            result.connections.forEach(connection => {
-                    console.log(`connected to DB: ${connection.name}`)
-            });
-        })
-        .catch(error => {
-            console.log('problems connecting to DB\n', error.message)
-
-        })
-        console.log(`Server running on port ${PORT}\nopen http://localhost:${PORT} to view the page`)
-    });
+    connectToDB(dbstring, dbname);
+    console.log(`Server running on port ${PORT}\nopen http://localhost:${PORT} to view the page`);
+    if(process.env.DEBUG) {
+        console.log('WARNING! CURRENTLY IN DEBUG MODE!');
+    }
+});

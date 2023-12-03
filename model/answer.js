@@ -23,6 +23,11 @@ const answerSchema = mongoose.Schema({
         type: String,
         required: true,
         minlength: 5
+    },
+    winner: {
+        type: Boolean,
+        required: true,
+        default: false
     }
 });
 

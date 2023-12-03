@@ -1,0 +1,4 @@
+//RENAME THIS FILE TO .env and fill in values for the environment variables
+PORT=3000;
+DBSTRING='STRING TO YOUR MONGODB INSTANCE.'
+DBNAME=TEST2

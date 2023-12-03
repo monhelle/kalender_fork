@@ -25,5 +25,5 @@ document.addEventListener('DOMContentLoaded', function() {
     dateDisplay.textContent = currentDate.toDateString();
 
     // Update the progress percentage in the HTML
-    percentageDisplay.textContent = progressPercentage.toFixed(2); // Update the displayed percentage
+    percentageDisplay.textContent = LASTCALENDARDAY-currentDayInDecember;//progressPercentage.toFixed(2); // Update the displayed percentage
 });

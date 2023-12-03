@@ -1,12 +1,11 @@
 const path = require('path');
-const DEBUG = false;
+const DEBUG =  process.env.DEBUG || false;
 
 const index =  (req, res) => {
     res.render('index');
 }
 
 const getdate = (req, res, next) => {
-    console.log('DEBUGMODE:', DEBUG)
     const day = req.params.day;
     const month = req.params.month;
     const currentDate = new Date();
