@@ -70,7 +70,6 @@ function findWinner(resultList) {
  */
 function isDatePassed(date){
     const today = new Date().getDate();
-    console.log(`today is ${today} and date is ${date}`)
     return date < today;
 }
 

@@ -5,7 +5,7 @@ const app = express();
 const routes = require('./routes/defaultroutes');
 
 //Environment variables
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const dbname = process.env.DBNAME;
 const dbstring = process.env.DBSTRING;
 
@@ -17,5 +17,8 @@ app.use(routes);
 
 app.listen(PORT, () => {
     connectToDB(dbstring, dbname);
-    console.log(`Server running on port ${PORT}\nopen http://localhost:${PORT} to view the page`)
+    console.log(`Server running on port ${PORT}\nopen http://localhost:${PORT} to view the page`);
+    if(process.env.DEBUG) {
+        console.log('WARNING! CURRENTLY IN DEBUG MODE!');
+    }
 });

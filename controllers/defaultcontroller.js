@@ -6,7 +6,6 @@ const index =  (req, res) => {
 }
 
 const getdate = (req, res, next) => {
-    console.log('DEBUGMODE:', DEBUG)
     const day = req.params.day;
     const month = req.params.month;
     const currentDate = new Date();
