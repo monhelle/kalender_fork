@@ -10,7 +10,7 @@ router.get('/:month/:day',getdate);
 
 router.get('/godkjent', approved);
 
-router.get('/ikke-godkjent/:day/:errormessage', notapproved);
+router.get('/ikke-godkjent', notapproved);
 
 router.post('/:month/:day', postAnswer);
 

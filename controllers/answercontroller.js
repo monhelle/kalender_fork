@@ -8,7 +8,10 @@ const postAnswer = async (req, res, next) => {
         result = await Answer.create({date, epost, svar});
         res.status(200).redirect('/godkjent');
     } catch (error){
-        res.status(409).redirect(`/ikke-godkjent/${date}/${error.message}`);
+        console.log(error.message);
+        res.status(409).render(`notapproved`, {
+            message: "Her gikk noe galt. Brukte du viken-epost? Var svaret ditt mer enn 5 tegn?"
+        });
     }
 }
 
