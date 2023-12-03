@@ -1,13 +1,20 @@
 <%-include("partials/header") %>
     <% if(Array.isArray(result) && Array.length > 0) { %>
         <div id="answerlist">
-            <h1>Svar mottatt for <%=date%>. Desember</h1>
+            <div class="answer-header">
+                <% if(winners) { %>
+                    <h2><%=date%>. Desember - Dagens vinner!</h2>
+                    <% winners.forEach( winner => { %>
+                        <h1><%=winner.epost%></h1>
+                    <% }) %>
+                <% } %>
+                <p>Antall svar: <%= result.length %></p>
+            </div>
             <%for(item of result) {%>
                 <div class="answer">
                     <h2><%=item.epost%></h2>
                     <p><%=item.svar%></p>
                 </div>
-                
             <%}%>
         </div>
     <%}%>

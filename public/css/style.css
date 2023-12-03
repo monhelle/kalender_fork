@@ -51,6 +51,13 @@ body {
     z-index: 2; /* Ensure the inner bow is above the outer bow */
 }
 
+#column-mid h1 {
+    padding-top: 2rem;
+    font-size: 5rem;
+    color: white;
+    text-align: center;
+}
+
 .content-wrapper {
     display: flex;
     justify-content: space-between;
@@ -101,15 +108,8 @@ footer {
     text-align: center;
     vertical-align: bottom;
 }
-
-#column-mid h1 {
-    padding-top: 2rem;
-    font-size: 5rem;
-    color: white;
-    text-align: center;
-}
 .logo {
-    width: inherit;
+    width: 100%;
 }
 .logo img{
     width: 100%;
@@ -155,7 +155,9 @@ footer {
     color: white;
 }
 
-
+.invisilink {
+    text-decoration: none;
+}
 .lid {
     position: absolute;
     width: 110%;

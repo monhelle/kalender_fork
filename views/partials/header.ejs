@@ -7,13 +7,12 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
     <% if(Array.isArray(cssList)) { %>
         <% for(cssSheet of cssList) { %>
-            <% console.log(cssSheet); %>
             <link rel="stylesheet" href=<%=cssSheet%>>
             <% } %>
     <% } %>
-    <!-- <script src="js/script.js" defer></script>
+    <script src="js/script.js" defer></script>
     <script src="js/swipe.js" defer></script>
-    <script src="js/progress-bar.js" defer></script> -->
+    <script src="js/progress-bar.js" defer></script>
     <!-- Fathom - beautiful, simple website analytics -->
     <!-- <script src="https://cdn.usefathom.com/script.js" data-site="KFNWRZEH" defer></script> -->
     <!-- / Fathom -->
@@ -25,4 +24,4 @@
             
         </div>
         <div id="column-mid">  
-            <h1>Bleikerkalenderen 2023</h1>
+            <a href="/" class="invisilink"><h1>Bleikerkalenderen 2023</h1></a>
