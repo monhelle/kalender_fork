@@ -9,8 +9,9 @@ const getdate = (req, res, next) => {
     const day = req.params.day;
     const month = req.params.month;
     const currentDate = new Date();
+    console.log('getdate', DEBUG, DEBUG == 'false');
     if(day && month) {
-        if(DEBUG || month == 'december' && day <= currentDate.getDate()) {
+        if(DEBUG == 'true'|| month == 'december' && day <= currentDate.getDate()) {
             res.sendFile(path.resolve(`${__dirname}/../public/${month}/${day}/content.html`));
         } else {
             console.log('naughty naughty');
