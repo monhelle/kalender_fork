@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     for (let i = 1; i <= DAYSINCALENDAR; i++) {
         let gridItem = document.createElement('div');
         gridItem.className = 'grid-item';
+        gridItem.id = i;
         // Additional elements for the gift box design
         let ribbon = document.createElement('div');
         ribbon.className = 'ribbon';
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let textContent = document.createElement('i');
         textContent.textContent = i;
         textContent.className = 'grid-item-text'; // Add a specific class for styling
+        textContent.id = i;
 
         // Append the text content to the grid item
         gridItem.appendChild(textContent);
@@ -44,19 +46,31 @@ document.addEventListener('DOMContentLoaded', function () {
             
             gridItem.addEventListener('click', e => {
                 e.preventDefault();
+
+                let itemNumber = e.target.id;
                 // Add your custom logic for handling opened items
-                let itemNumber = this.querySelector('.grid-item-text').textContent;
+                // let itemNumber = e.target.lastChild.innerHTML;
+                // let itemNumber = this.querySelector('.grid-item-text').textContent;
                 localStorage.setItem('currentPageIndex', itemNumber);
                 const href = `/december/${itemNumber}`;
                 window.location.href = href; // Redirect to a new page with the item number as a parameter
             });
         } else {
+            /*uncomment before production*/
             gridItem.classList.add('unopenable');
             ribbon.classList.add('unopenable-rib');
             bow.classList.add('unopenable-rib');
             lid.classList.add('unopenable-lid');
             background.classList.add('unopenable-bg'); // Add a class for unopenable background styling
             textContent.classList.add('unopenable-text'); // Add a class for unopenable text styling
+            
+            /*remove before production*/
+            // let itemNumber = this.querySelector('.grid-item-text').textContent;
+            // localStorage.setItem('currentPageIndex', itemNumber);
+            // const href = `/december/${itemNumber}`;
+            // window.location.href = href; // Redirect to a new page with the item number as a parameter
+
+        
         }
 
         gridContainer.appendChild(gridItem);

@@ -8,7 +8,7 @@ const answerSchema = mongoose.Schema({
     epost: {
         type: String,
         required: true,
-        match: [/^\w+([\.-]?\w+)*@viken.no$/, "Ikke en gyldig epost!"],
+        match: [/^\w+([\.-]?\w+)*@viken.no$/, "Ikke en gyldig epost! Bruk viken-eposten din"],
         validate: {
             //check that noone used this email to post multiple answers for the current date.
             validator: async function() {
