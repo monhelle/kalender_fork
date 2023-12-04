@@ -15,11 +15,11 @@ app.use(express.static(__dirname + '/public/'));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(routes);
-
+console.log(process.env.DEBUG == false)
 app.listen(PORT, () => {
     connectToDB(dbstring, dbname);
     console.log(`Server running on port ${PORT}\nopen http://localhost:${PORT} to view the page`);
-    if(process.env.DEBUG == true) {
+    if(process.env.DEBUG == false) {
         console.log('WARNING! CURRENTLY IN DEBUG MODE!');
     }
 });
