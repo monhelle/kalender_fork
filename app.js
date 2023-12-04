@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(routes);
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     connectToDB(dbstring, dbname);
     console.log(`Server running on port ${PORT}\nopen http://localhost:${PORT} to view the page`);
     if(process.env.DEBUG == true) {
