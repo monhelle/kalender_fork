@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     for (let i = 1; i <= DAYSINCALENDAR; i++) {
         let gridItem = document.createElement('div');
         gridItem.className = 'grid-item';
+        gridItem.id = i;
         // Additional elements for the gift box design
         let ribbon = document.createElement('div');
         ribbon.className = 'ribbon';
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let textContent = document.createElement('i');
         textContent.textContent = i;
         textContent.className = 'grid-item-text'; // Add a specific class for styling
+        textContent.id = i;
 
         // Append the text content to the grid item
         gridItem.appendChild(textContent);
@@ -44,8 +46,10 @@ document.addEventListener('DOMContentLoaded', function () {
             
             gridItem.addEventListener('click', e => {
                 e.preventDefault();
+
+                let itemNumber = e.target.id;
                 // Add your custom logic for handling opened items
-                let itemNumber = e.target.lastChild.innerHTML;
+                // let itemNumber = e.target.lastChild.innerHTML;
                 // let itemNumber = this.querySelector('.grid-item-text').textContent;
                 localStorage.setItem('currentPageIndex', itemNumber);
                 const href = `/december/${itemNumber}`;
