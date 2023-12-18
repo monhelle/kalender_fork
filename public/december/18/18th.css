@@ -1,0 +1,8 @@
+.imgCalendar {
+  width: 50%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
